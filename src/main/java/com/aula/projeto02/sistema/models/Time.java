@@ -19,7 +19,12 @@ public class Time {
 
     private String nome;
 
+    @OneToOne
+    @JoinColumn(name = "tecnico_id")
+    private Tecnico tecnico;
+
     private String cidade;
+
 
     @JsonIgnore
     @OneToMany(mappedBy = "time", cascade = CascadeType.ALL, orphanRemoval = true)
